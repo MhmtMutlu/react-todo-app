@@ -8,11 +8,27 @@
 }
 
 .layout-container {
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: index.$large-devices) {
+    width: 50%;
+  }
+
+  @media (max-width: index.$medium-devices) {
+    width: 60%;
+  }
+
+  @media (max-width: index.$small-devices) {
+    width: 80%;
+  }
+
+  @media (max-width: index.$xsmall-devices) {
+    width: 95%;
+  }
 }

@@ -1,10 +1,17 @@
+@use "../../index";
+
 .header-container {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .header-title {
+    font-size: 50px;
+    padding-top: 30px;
+  
+    @media (max-width: index.$xsmall-devices) {
+      font-size: 35px;
+    }
+  }
 }
 
-.header-title {
-  font-size: 50px;
-  padding-top: 30px;
-}

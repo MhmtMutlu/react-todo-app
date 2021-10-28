@@ -1,10 +1,18 @@
 $dark-grey-color: #343a40;
 $light-color: #ced4da;
+$hover-color: #495057;
+$grey-color: #6c757d;
+
+$xsmall-devices: 480px;
+$small-devices: 768px;
+$medium-devices: 1024px;
+$large-devices: 1280px;
 
 *, ::after, ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
