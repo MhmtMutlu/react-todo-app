@@ -2,6 +2,8 @@ $dark-grey-color: #343a40;
 $light-color: #ced4da;
 $hover-color: #495057;
 $grey-color: #6c757d;
+$yellow-color: #e9c46a;
+$red-color: #e76f51;
 
 $xsmall-devices: 480px;
 $small-devices: 768px;
@@ -14,6 +16,13 @@ $large-devices: 1280px;
   padding: 10px;
   font-size: 20px;
   border-bottom: 2px solid $color;
+  transition: .5s all;
+}
+
+@mixin button($color: $light-color) {
+  border: none;
+  background-color: inherit;
+  color: $color;
   transition: .5s all;
 }
 
