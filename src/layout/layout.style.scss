@@ -1,0 +1,14 @@
+@use '../index';
+
+.layout-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: index.$dark-grey-color;
+  color: index.$light-color;
+}
+
+.layout-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px;
+}
