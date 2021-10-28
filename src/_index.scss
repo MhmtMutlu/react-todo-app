@@ -8,6 +8,15 @@ $small-devices: 768px;
 $medium-devices: 1024px;
 $large-devices: 1280px;
 
+@mixin form($color: $light-color, $bg-color: $dark-grey-color) {
+  background-color: $bg-color;
+  color: $color;
+  padding: 10px;
+  font-size: 20px;
+  border-bottom: 2px solid $color;
+  transition: .5s all;
+}
+
 *, ::after, ::before {
   margin: 0;
   padding: 0;

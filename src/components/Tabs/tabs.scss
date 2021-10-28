@@ -1,0 +1,21 @@
+@use "../../index" ;
+
+.tabs-container {
+  width: 100%;
+  display: grid; 
+  grid-template-columns: 0.5fr 0.5fr 1.1fr 1.9fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . ."; 
+
+  button {
+    border: none;
+    @include index.form;
+
+    &:hover {
+      cursor: pointer;
+      background-color: index.$hover-color;
+    }
+  }
+}

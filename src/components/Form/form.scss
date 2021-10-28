@@ -1,14 +1,5 @@
 @use "../../index";
 
-@mixin form($color: index.$light-color, $bg-color: index.$dark-grey-color) {
-  background-color: $bg-color;
-  color: $color;
-  padding: 10px;
-  font-size: 20px;
-  border-bottom: 2px solid $color;
-  transition: .5s all;
-}
-
 .form-wrapper {
   width: 100%;
   padding: 20px 0;
@@ -18,10 +9,16 @@
   
   .form-container {
     width: 100%;
+    display: grid; 
+    grid-template-columns: 0.3fr 1.8fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
 
     .form-button {
       border: none;
-      @include form;
+      @include index.form;
   
       &:hover {
         cursor: pointer;
@@ -31,8 +28,7 @@
   
     .form-input {
       border: none;
-      @include form;
-      width: 85%;
+      @include index.form;
 
       &:hover {
         background-color: index.$hover-color;
@@ -44,14 +40,6 @@
 
       &::placeholder {
         color: index.$grey-color;
-      }
-
-      @media (max-width: 580px) {
-        width: 80%;
-      }
-
-      @media (max-width: 390px) {
-        width: 70%;
       }
     }
   }
