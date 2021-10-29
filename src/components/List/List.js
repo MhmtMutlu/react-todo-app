@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TodoContext } from "../../context/TodoContext";
 import "./list.scss";
 
 const List = () => {
-  const { todos, removeTodo, changeTodoStatus } = useContext(TodoContext);
+  const { removeTodo, changeTodoStatus, filteredTodos } = useContext(TodoContext);
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    setTodos(filteredTodos());
+  }, [filteredTodos]);
 
   return (
     <div className="list-container">
       <ul>
         {todos.length > 0 &&
-          todos?.map((todo) => (
+          todos.map((todo) => (
             <li key={todo.id} className={todo.completed ? "done" : ""}>
               <span onClick={() => changeTodoStatus(todo.id)}>{todo.text}</span>
               <span>
