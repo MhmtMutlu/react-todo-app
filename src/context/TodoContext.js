@@ -8,6 +8,18 @@ const TodoContextProvider = ({ children }) => {
   const [todos, setTodos] = useLocalStorage("todos", todoList);
   const [filter, setFilter] = useState("all");
 
+  const findTodoText = (id) => {
+    const todo = todos.filter((todo) => todo.id === id);
+    return todo[0]?.text;
+  };
+
+  const changeTodoText = (id, text) => {
+    const indexOfTodo = todos.findIndex((todo) => todo.id === id);
+    todos[indexOfTodo].text = text;
+    const newTodo = todos.map((todo) => todo);
+    setTodos(newTodo);
+  }
+
   const filteredTodos = () => {
     if (filter === "all") {
       return todos;
@@ -48,6 +60,8 @@ const TodoContextProvider = ({ children }) => {
   const values = {
     todos,
     filter,
+    findTodoText,
+    changeTodoText,
     filteredTodos,
     changeFilter,
     addNewTodo,
