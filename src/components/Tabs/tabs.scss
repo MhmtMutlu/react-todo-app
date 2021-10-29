@@ -17,5 +17,9 @@
       cursor: pointer;
       background-color: index.$hover-color;
     }
+
+    &.selected {
+      background-color: index.$hover-color;
+    }
   }
 }

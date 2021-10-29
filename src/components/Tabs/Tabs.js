@@ -3,13 +3,28 @@ import { TodoContext } from "../../context/TodoContext";
 import "./tabs.scss";
 
 const Tabs = () => {
-  const { removeCompletedTodos } = useContext(TodoContext);
+  const { filter, removeCompletedTodos, changeFilter } = useContext(TodoContext);
 
   return (
     <div className="tabs-container">
-      <button>All</button>
-      <button>New</button>
-      <button>Completed</button>
+      <button
+        onClick={() => changeFilter("all")}
+        className={filter === "all" ? "selected" : ""}
+      >
+        All
+      </button>
+      <button
+        onClick={() => changeFilter("active")}
+        className={filter === "active" ? "selected" : ""}
+      >
+        Active
+      </button>
+      <button
+        onClick={() => changeFilter("completed")}
+        className={filter === "completed" ? "selected" : ""}
+      >
+        Completed
+      </button>
       <button onClick={() => removeCompletedTodos()}>
         Delete Completed Todos
       </button>
