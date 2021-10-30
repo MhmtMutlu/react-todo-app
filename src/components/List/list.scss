@@ -44,6 +44,26 @@
       }
 
       span {
+        .check-button {
+          @include index.button;
+          padding-right: 9px;
+
+          &:hover {
+            cursor: pointer;
+            color: index.$green-color;
+          }
+        }
+
+        .times-button {
+          @include index.button;
+          padding-right: 9px;
+
+          &:hover {
+            cursor: pointer;
+            color: index.$red-color;
+          }
+        }
+
         .edit-button {
           @include index.button;
           padding-right: 5px;

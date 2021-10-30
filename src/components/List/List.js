@@ -30,6 +30,25 @@ const List = () => {
                   {todo.text}
                 </span>
                 <span>
+                  {
+                    todo.completed 
+                      ? (
+                        <button
+                          className="times-button"
+                          onClick={() => changeTodoStatus(todo.id)}
+                        >
+                          <i class="far fa-calendar-times"></i>
+                        </button>
+                      )
+                      : (
+                        <button
+                          className="check-button"
+                          onClick={() => changeTodoStatus(todo.id)}
+                        >
+                          <i class="far fa-calendar-check"></i>
+                        </button>
+                      )
+                  }
                   {todo.completed || (
                     <button
                       className="edit-button"
